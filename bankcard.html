@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>联盟疯传商家管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Le styles -->
+    <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-daterangepicker/daterangepicker.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/jvectormap/jquery-jvectormap.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/morris.js/morris.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/skins/_all-skins.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/AdminLTE.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/Ionicons/css/ionicons.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="js/chosen/chosen.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
+    <script type="text/javascript" src="bower_components/morris.js/morris.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script type="text/javascript" src="dist/js/adminlte.min.js"></script>
+    <script type="text/javascript" src="dist/js/pages/dashboard.js"></script>
+    <script type="text/javascript" src="dist/js/demo.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/chosen/chosen.jquery.js"></script></head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/store" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>东莞友客网络有限公司</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>东莞友客网络有限公司</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only"></span>
+            </a>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="img-circle" alt="User Image">
+
+                                <p>
+                                    <!--                  Alexander Pierce - Web Developer-->
+                                    <!--                  <small>Member since Nov. 2012</small>-->
+                                    <small>创建于：2019-05-13 17:49:17</small>
+                                </p>
+                            </li>
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <!-- <div class="pull-left">
+                                    <a href="/store/profile/edit" class="btn btn-default btn-flat">资料修改</a>
+                                </div> -->
+                                <div class="pull-right">
+                                    <a href="/store/login/logout" class="btn btn-default btn-flat">退 出 登 录</a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <!--          <li>-->
+                    <!--            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
+                    <!--          </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">主导航</li>
+                <li><a href="/store"><i class="fa fa-book"></i> <span>运营数据</span></a></li>
+                <li class="">
+                    <a href="/activity/store-activity/index">
+                        <i class="glyphicon glyphicon-gift"></i>
+                        <span>活动管理</span>
+                    </a>
+                </li>
+                <li class="treeview active">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-usd"></i>
+                        <span>财务管理</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="active" ><a href="/store/bank-card/index"><i class="glyphicon glyphicon-credit-card"></i> 银行卡管理</a></li>
+                        <li><a href="/store/asset/withdrawal"><i class="glyphicon glyphicon-log-out"></i> 提现管理</a></li>
+
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/activity/store-alliance/index">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        <span>合作申请</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/password">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        <span>密码修改</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/index">
+                        <i class="glyphicon glyphicon-asterisk"></i>
+                        <span>平台设置</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <ol class="breadcrumb col-xs-8">
+                                <li><i class="glyphicon glyphicon-credit-card"></i> 银行卡管理</li>
+                            </ol>
+                            <ol class="breadcrumb col-xs-4 ">
+                                <li class="pull-right"><a href="javascript:history.back(-1)"><i class="fa fa-list"></i> 返回</a></li>
+                            </ol>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="col-xs-2">
+                                <button type="button" class="btn btn-info" onclick="locationHref('save')">添加银行卡</button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>账号名称</th>
+                                    <th>银行类型</th>
+                                    <th>银行卡号</th>
+                                    <th>银行卡归属地</th>
+                                    <th>开户行</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td>黄晓镟</td>
+                                    <td>建设银行</td>
+                                    <td>6217002870046139281</td>
+                                    <td>武汉市</td>
+                                    <td>中国建设银行</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=5')">
+                                            修改
+                                        </button>
+
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    </section>    </div>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <!-- <b>Version</b> 1.1.0 -->
+    </div>
+    <!-- <strong>版权所有 &copy; 2018 -  <a href="#">深圳前海倍客网络科技有限公司</a></strong> -->
+</footer>
+<div class="control-sidebar-bg"></div>
+</div>
+<script type="text/javascript">
+
+    function locationHref(url)
+    {
+        window.location.href=url;
+    }
+
+    /*
+     *   弹框方法
+     *    @title 弹框的标题
+     *    @url   框内链接的内容
+     */
+    function showOpen(title,url,area){
+        area=area||['650px',"520px"];
+        layer.open({
+            type:2,
+            title:title,
+            shade:[0.5, '#393D49'],
+            area: area,
+            maxmin: false,
+            content: [url,'no'],
+            scrollbar: true
+        })
+    }
+</script>
+</body>
+</html>

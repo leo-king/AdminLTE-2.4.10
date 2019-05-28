@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>联盟疯传商家管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Le styles -->
+    <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-daterangepicker/daterangepicker.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/jvectormap/jquery-jvectormap.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/morris.js/morris.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/skins/_all-skins.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/AdminLTE.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/Ionicons/css/ionicons.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="js/chosen/chosen.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
+    <script type="text/javascript" src="bower_components/morris.js/morris.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script type="text/javascript" src="dist/js/adminlte.min.js"></script>
+    <script type="text/javascript" src="dist/js/pages/dashboard.js"></script>
+    <script type="text/javascript" src="dist/js/demo.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/chosen/chosen.jquery.js"></script></head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/store" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>东莞友客网络有限公司</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>东莞友客网络有限公司</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only"></span>
+            </a>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="img-circle" alt="User Image">
+
+                                <p>
+                                    <!--                  Alexander Pierce - Web Developer-->
+                                    <!--                  <small>Member since Nov. 2012</small>-->
+                                    <small>创建于：2019-05-13 17:49:17</small>
+                                </p>
+                            </li>
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <!-- <div class="pull-left">
+                                    <a href="/store/profile/edit" class="btn btn-default btn-flat">资料修改</a>
+                                </div> -->
+                                <div class="pull-right">
+                                    <a href="/store/login/logout" class="btn btn-default btn-flat">退 出 登 录</a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <!--          <li>-->
+                    <!--            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
+                    <!--          </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">主导航</li>
+                <li><a href="/store"><i class="fa fa-book"></i> <span>运营数据</span></a></li>
+                <li class="">
+                    <a href="/activity/store-activity/index">
+                        <i class="glyphicon glyphicon-gift"></i>
+                        <span>活动管理</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-usd"></i>
+                        <span>财务管理</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/store/bank-card/index"><i class="glyphicon glyphicon-credit-card"></i> 银行卡管理</a></li>
+                        <li><a href="/store/asset/withdrawal"><i class="glyphicon glyphicon-log-out"></i> 提现管理</a></li>
+
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/activity/store-alliance/index">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        <span>合作申请</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/password">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        <span>密码修改</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/index">
+                        <i class="glyphicon glyphicon-asterisk"></i>
+                        <span>平台设置</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <ol class="breadcrumb col-xs-8">
+                                <li><a href="/activity/store-activity/index"><i class="glyphicon glyphicon-gift"></i> 活动管理</a></li>
+                                <li><a href="/activity/store-merchant/index?activity_id=0"></i> 商家管理</a></li>
+                                <li> 商品领取记录</li>
+                            </ol>
+                            <ol class="breadcrumb col-xs-4 ">
+                                <li class="pull-right"><a href="javascript:history.back(-1)"><i class="fa fa-list"></i> 返回</a></li>
+                            </ol>
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="box-body">
+                                <input type="hidden" name="merchant_id" value="52" />
+                                <div class="row">
+                                    <div class="input-group col-xs-3">
+                                        <span class="input-group-addon">使用时间</span>
+                                        <input type="text" class="form-control" id="start_time" value="" name="start_time" placeholder="开始时间">
+                                    </div>
+
+                                    <div class="input-group col-xs-3">
+                                        <span class="input-group-addon">至</span>
+                                        <input type="text" class="form-control" id="end_time" value="" name="end_time" placeholder="结束时间">
+                                    </div>
+                                    <input type="hidden" name="numPage" value="10" />
+                                    <button type="submit" class="btn btn-primary">搜索</button>
+                                    <button type="button" class="btn btn-default" onclick="locationHref('discounts-log?merchant_id=52')">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>用户头像</th>
+                                    <th>昵称</th>
+                                    <th>商品名称</th>
+                                    <th>使用时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <style type="text/css">
+                            .page_float_left{
+                                padding-right: 15px;
+                                padding-left: 30px;
+                            }
+                        </style>
+                        <script type="text/javascript">
+                            $(function(){
+                                $("#select_page").change(function(){
+                                    var page_number = $(this).val();
+
+                                    var page_url = "/activity/store-merchant/discounts-log?start_time=&end_time=&merchant_id=52";
+                                    if(page_url.indexOf('?') > 0){
+                                        window.location.href = page_url + "&numPage=" + page_number;
+                                    }else{
+                                        window.location.href = page_url + "?numPage=" + page_number;
+                                    }
+
+                                });
+                            })
+                        </script>
+                    </div>
+
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    </section>
+    <style type="text/css">
+        .form-horizontal .row .input-group{
+            float:left;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $('#start_time').daterangepicker({
+                singleDatePicker:true,		//设置为单个的datepicker，而不是有区间的datepicker
+                autoApply:true,
+                autoUpdateInput:false,
+                "locale": {
+                    format: 'YYYY-MM-DD',
+                    applyLabel : '确定',
+                    cancelLabel : '取消',
+                    customRangeLabel : '自定义',
+                    daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                    monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                    firstDay : 1
+                }
+            })
+            $('#end_time').daterangepicker({
+                singleDatePicker:true,		//设置为单个的datepicker，而不是有区间的datepicker
+                autoApply:true,
+                autoUpdateInput:false,
+                "locale": {
+                    format: 'YYYY-MM-DD',
+                    applyLabel : '确定',
+                    cancelLabel : '取消',
+                    customRangeLabel : '自定义',
+                    daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                    monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                    firstDay : 1
+                }
+            })
+        });
+
+
+    </script>    </div>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <!-- <b>Version</b> 1.1.0 -->
+    </div>
+    <!-- <strong>版权所有 &copy; 2018 -  <a href="#">深圳前海倍客网络科技有限公司</a></strong> -->
+</footer>
+<div class="control-sidebar-bg"></div>
+</div>
+<script type="text/javascript">
+
+    function locationHref(url)
+    {
+        window.location.href=url;
+    }
+
+    /*
+     *   弹框方法
+     *    @title 弹框的标题
+     *    @url   框内链接的内容
+     */
+    function showOpen(title,url,area){
+        area=area||['650px',"520px"];
+        layer.open({
+            type:2,
+            title:title,
+            shade:[0.5, '#393D49'],
+            area: area,
+            maxmin: false,
+            content: [url,'no'],
+            scrollbar: true
+        })
+    }
+</script>
+</body>
+</html>

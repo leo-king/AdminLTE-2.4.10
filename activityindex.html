@@ -1,0 +1,927 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>商家管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Le styles -->
+    <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-daterangepicker/daterangepicker.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/jvectormap/jquery-jvectormap.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/morris.js/morris.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/skins/_all-skins.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/AdminLTE.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/Ionicons/css/ionicons.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="js/chosen/chosen.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
+    <script type="text/javascript" src="bower_components/morris.js/morris.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script type="text/javascript" src="dist/js/adminlte.min.js"></script>
+    <script type="text/javascript" src="dist/js/pages/dashboard.js"></script>
+    <script type="text/javascript" src="dist/js/demo.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/chosen/chosen.jquery.js"></script></head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/store" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>好运来网络有限公司</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>好运来网络有限公司</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only"></span>
+            </a>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="img-circle" alt="User Image">
+
+                                <p>
+                                    <!--                  Alexander Pierce - Web Developer-->
+                                    <!--                  <small>Member since Nov. 2012</small>-->
+                                    <small>创建于：2019-05-13 17:49:17</small>
+                                </p>
+                            </li>
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <!-- <div class="pull-left">
+                                    <a href="/store/profile/edit" class="btn btn-default btn-flat">资料修改</a>
+                                </div> -->
+                                <div class="pull-right">
+                                    <a href="/store/login/logout" class="btn btn-default btn-flat">退 出 登 录</a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <!--          <li>-->
+                    <!--            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
+                    <!--          </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">主导航</li>
+                <li><a href="/store"><i class="fa fa-book"></i> <span>运营数据</span></a></li>
+                <li class="">
+                    <a href="/activity/store-activity/index">
+                        <i class="glyphicon glyphicon-gift"></i>
+                        <span>活动管理</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-usd"></i>
+                        <span>财务管理</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/store/bank-card/index"><i class="glyphicon glyphicon-credit-card"></i> 银行卡管理</a></li>
+                        <li><a href="/store/asset/withdrawal"><i class="glyphicon glyphicon-log-out"></i> 提现管理</a></li>
+
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/activity/store-alliance/index">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        <span>合作申请</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/password">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        <span>密码修改</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/index">
+                        <i class="glyphicon glyphicon-asterisk"></i>
+                        <span>平台设置</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <ol class="breadcrumb">
+                                <li><i class="glyphicon glyphicon-gift"></i> 活动管理</li>
+                            </ol>
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <input type="text" class="form-control" name="name" value="" placeholder="活动名称">
+                                    </div>
+                                </div>
+
+                                </br>
+                                <div class="row">
+                                    <div class="input-group col-xs-3">
+                                        <span class="input-group-addon">发布时间</span>
+                                        <input type="text" class="form-control" id="start_time" value="" name="start_time" placeholder="开始时间">
+                                    </div>
+
+                                    <div class="input-group col-xs-3">
+                                        <span class="input-group-addon">至</span>
+                                        <input type="text" class="form-control" id="end_time" value="" name="end_time" placeholder="结束时间">
+                                    </div>
+                                    <input type="hidden" name="numPage" value="10" />
+                                    <button type="submit" class="btn btn-primary">搜索</button>
+                                    <button type="button" class="btn btn-default" onclick="locationHref('index')">重置</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="box-body">
+                            <div class="col-xs-2">
+                                <button type="button" class="btn btn-info" onclick="locationHref('save')">发布活动</button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>活动图片</th>
+                                    <th>活动名称</th>
+                                    <th>活动商品总量</th>
+                                    <th>售出量</th>
+                                    <th>实际浏览量</th>
+                                    <th>转发量</th>
+                                    <th>状态</th>
+                                    <th>发布时间</th>
+                                    <th>更新时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/0eb2d6c95925b0bee0024eec1dd59b8b.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>让你变美只要2.98</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=42')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>1000</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-23 19:28:42</td>
+                                    <td>2019-05-23 20:31:19</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=42')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=42')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=42')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=42')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=42')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/675df01df85fc9d47ab61cdecce2f059.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>如何让门店客户倍增？生意更好</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=41')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>299</td>
+                                    <td>0</td>
+                                    <td>45</td>
+                                    <td>9</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-21 10:38:46</td>
+                                    <td>2019-05-22 15:14:09</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=41')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=41')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=41')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=41')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=41')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/d74cc05fc4fb571d75ac68bc54fa4558.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>IT服务大礼包限时抢购</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=40')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>18</td>
+                                    <td>1</td>
+                                    <td>35</td>
+                                    <td>17</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-20 09:33:09</td>
+                                    <td>2019-05-20 10:05:52</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=40')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=40')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=40')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=40')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=40')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/dbd3374f8730e5acae905d9e90731a1c.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>88元抢购正版收银系统</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=39')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>99</td>
+                                    <td>0</td>
+                                    <td>22</td>
+                                    <td>8</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-19 09:33:35</td>
+                                    <td>2019-05-19 11:59:57</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=39')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=39')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=39')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=39')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=39')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>a</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=38')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>2</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>
+                                        已结束
+                                    </td>
+                                    <td>2019-05-18 16:27:13</td>
+                                    <td></td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=38')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=38')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=38')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=38')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=38')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/9890b8200483a13826ccfc182a2aa401.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>抢购现金红包</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=37')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>200</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-17 16:34:25</td>
+                                    <td>2019-05-18 14:36:03</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=37')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=37')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=37')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=37')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=37')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/e75ad901c736a7186b080a9a6d851a0b.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>美妆护肤减龄10岁</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=36')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>1000</td>
+                                    <td>4</td>
+                                    <td>12</td>
+                                    <td>6</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-15 18:24:00</td>
+                                    <td>2019-05-17 16:21:56</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=36')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=36')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=36')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=36')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=36')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/b9e7d9ec1ce943c0786486f678d6050b.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>中秋国庆大作战</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=35')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>1000</td>
+                                    <td>2</td>
+                                    <td>6</td>
+                                    <td>6</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-15 16:54:55</td>
+                                    <td>2019-05-17 16:23:38</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=35')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=35')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=35')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=35')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=35')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/01936be8b4b469b5fc1957bac02751fc.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>时尚秋款 新品上市 抢到就是赚到</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=34')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>1000</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-15 16:10:48</td>
+                                    <td>2019-05-17 16:24:06</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=34')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=34')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=34')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=34')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=34')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/74812f7cb35f08b9afd246987b82f862.png" width="80px" height="80px;" />
+                                    </td>
+                                    <td>
+                                        <p>原汁原味的云南过桥米线</p>
+                                        <p>
+                                            <button type="button" class="btn btn-success" onclick="qrcodeShare('/activity/store-activity/share-qrcode?activity_id=33')" data-toggle="modal" data-target="#modal-default">
+                                                扫码分享
+                                            </button>
+                                        </p>
+
+                                    </td>
+                                    <td>1000</td>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>
+                                        进行中
+                                    </td>
+                                    <td>2019-05-15 15:05:42</td>
+                                    <td>2019-05-17 16:24:42</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/apply?activity_id=33')">
+                                            订单统计
+                                        </button>
+
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-activity/red-packet?activity_id=33')">
+                                            红包发放
+                                        </button>
+
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-commission/index?activity_id=33')">
+                                            商家分佣
+                                        </button>
+
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-success" onclick="locationHref('/activity/store-merchant/index?activity_id=33')">
+                                            商家管理
+                                        </button>
+
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-success" onclick="locationHref('save?id=33')">
+                                            编辑
+                                        </button>
+
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-5 page_float_left">
+                                <div class="dataTables_info" role="status" aria-live="polite">
+                                    显示 1 - 10，共 12 条记录，每页显示
+                                    <select name="page_number" id="select_page">
+                                        <option selected  value="10">10</option>
+                                        <option  value="20">20</option>
+                                        <option  value="30">30</option>
+                                        <option  value="40">40</option>
+                                        <option  value="50">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                    <ul class="pagination">
+
+                                        <li class="disabled">
+                                            <a href="#">首页</a>
+                                        </li>
+
+                                        <li class="disabled">
+                                            <a href="#">上一页</a>
+                                        </li>
+                                        <!-- Numbered page links -->
+                                        <li class="active">
+                                            <a href="#">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="/activity/store-activity/index?page=2&name=&numPage=10&start_time=&end_time=">
+                                                2		                        </a>
+                                        </li>
+
+                                        <!-- Next page link -->
+                                        <li>
+                                            <a href="/activity/store-activity/index?page=2&name=&numPage=10&start_time=&end_time=">
+                                                下一页
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/activity/store-activity/index?page=2&name=&numPage=10&start_time=&end_time=">
+                                                尾页
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <style type="text/css">
+                            .page_float_left{
+                                padding-right: 15px;
+                                padding-left: 30px;
+                            }
+                        </style>
+                        <script type="text/javascript">
+                            $(function(){
+                                $("#select_page").change(function(){
+                                    var page_number = $(this).val();
+
+                                    var page_url = "/activity/store-activity/index?name=&start_time=&end_time=";
+                                    if(page_url.indexOf('?') > 0){
+                                        window.location.href = page_url + "&numPage=" + page_number;
+                                    }else{
+                                        window.location.href = page_url + "?numPage=" + page_number;
+                                    }
+
+                                });
+                            })
+                        </script>
+                    </div>
+
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">扫描活动二维码，进行分享</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <style type="text/css">
+        .example-modal .modal {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            right: auto;
+            left: auto;
+            display: block;
+            z-index: 1;
+        }
+
+        .example-modal .modal {
+            background: transparent !important;
+        }
+        .modal-dialog {
+            width: 270px;
+            margin: 200px auto;
+        }
+        .modal-dialog .modal-body{
+            text-align: center;
+        }
+        .modal-dialog .modal-body p{
+            font-size: 16px;
+            color: #f20;
+        }
+
+        .form-horizontal .row .input-group{
+            float:left;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .status-red {
+            color: #f20;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+        $(function(){
+            $('#start_time').daterangepicker({
+                singleDatePicker:true,		//设置为单个的datepicker，而不是有区间的datepicker
+                autoApply:true,
+                autoUpdateInput:false,
+                "locale": {
+                    format: 'YYYY-MM-DD',
+                    applyLabel : '确定',
+                    cancelLabel : '取消',
+                    customRangeLabel : '自定义',
+                    daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                    monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                    firstDay : 1
+                }
+            })
+            $('#end_time').daterangepicker({
+                singleDatePicker:true,		//设置为单个的datepicker，而不是有区间的datepicker
+                autoApply:true,
+                autoUpdateInput:false,
+                "locale": {
+                    format: 'YYYY-MM-DD',
+                    applyLabel : '确定',
+                    cancelLabel : '取消',
+                    customRangeLabel : '自定义',
+                    daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                    monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                    firstDay : 1
+                }
+            })
+
+        });
+
+        //复制方法
+        function copyToClipboard(str){
+            const el = document.createElement('textarea');
+            el.value = str;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            layer.msg('复制成功');
+        }
+
+        //扫码分享
+        function qrcodeShare(url)
+        {
+            $("#modal-default").find('p').text('');
+            $.ajax({
+                type: 'get',
+                url: url,
+                dataTypes: 'json',
+                success: function (res) {
+                    if(res.code == 0){
+                        $("#modal-default").find('img').attr('src','/'+res.data);
+                        if(!res.state){
+                            $("#modal-default").find('p').text('没有活动商品');
+                        }
+                    }else {
+                        layer.msg( res.msg);
+                    }
+
+                },
+                error: function (jqXHR) {
+                    layer.msg( "获取数据发生错误！");
+                }
+            });
+        }
+    </script>    </div>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <!-- <b>Version</b> 1.1.0 -->
+    </div>
+    <!-- <strong>版权所有 &copy; 2018 -  <a href="#">深圳前海倍客网络科技有限公司</a></strong> -->
+</footer>
+<div class="control-sidebar-bg"></div>
+</div>
+<script type="text/javascript">
+
+    function locationHref(url)
+    {
+        window.location.href=url;
+    }
+
+    /*
+     *   弹框方法
+     *    @title 弹框的标题
+     *    @url   框内链接的内容
+     */
+    function showOpen(title,url,area){
+        area=area||['650px',"520px"];
+        layer.open({
+            type:2,
+            title:title,
+            shade:[0.5, '#393D49'],
+            area: area,
+            maxmin: false,
+            content: [url,'no'],
+            scrollbar: true
+        })
+    }
+</script>
+</body>
+</html>

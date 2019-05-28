@@ -1,0 +1,857 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>商家管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Le styles -->
+    <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-daterangepicker/daterangepicker.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/jvectormap/jquery-jvectormap.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/morris.js/morris.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/skins/_all-skins.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="dist/css/AdminLTE.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/Ionicons/css/ionicons.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="js/chosen/chosen.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
+    <script type="text/javascript" src="bower_components/morris.js/morris.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script type="text/javascript" src="dist/js/adminlte.min.js"></script>
+    <script type="text/javascript" src="dist/js/pages/dashboard.js"></script>
+    <script type="text/javascript" src="dist/js/demo.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js"></script>
+    <script type="text/javascript" src="js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="plugins/jQuery-File-Upload-master/js/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="js/static/jquery.form.js"></script>
+    <script type="text/javascript" src="js/static/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script></head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/store" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>东莞友客网络有限公司</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>东莞友客网络有限公司</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only"></span>
+            </a>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="http://dev-smt.oss-cn-shenzhen.aliyuncs.com/upload/activity/2019/05/364ea0d75db671a8369805d616a4179e.png" class="img-circle" alt="User Image">
+
+                                <p>
+                                    <!--                  Alexander Pierce - Web Developer-->
+                                    <!--                  <small>Member since Nov. 2012</small>-->
+                                    <small>创建于：2019-05-13 17:49:17</small>
+                                </p>
+                            </li>
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <!-- <div class="pull-left">
+                                    <a href="/store/profile/edit" class="btn btn-default btn-flat">资料修改</a>
+                                </div> -->
+                                <div class="pull-right">
+                                    <a href="/store/login/logout" class="btn btn-default btn-flat">退 出 登 录</a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <!--          <li>-->
+                    <!--            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
+                    <!--          </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">主导航</li>
+                <li><a href="/store"><i class="fa fa-book"></i> <span>运营数据</span></a></li>
+                <li class="">
+                    <a href="/activity/store-activity/index">
+                        <i class="glyphicon glyphicon-gift"></i>
+                        <span>活动管理</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-usd"></i>
+                        <span>财务管理</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/store/bank-card/index"><i class="glyphicon glyphicon-credit-card"></i> 银行卡管理</a></li>
+                        <li><a href="/store/asset/withdrawal"><i class="glyphicon glyphicon-log-out"></i> 提现管理</a></li>
+
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="/activity/store-alliance/index">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        <span>合作申请</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/password">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        <span>密码修改</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/store/store/index">
+                        <i class="glyphicon glyphicon-asterisk"></i>
+                        <span>平台设置</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-horizontal"  id="form_submit">
+                        <div class="nav-tabs-custom">
+                            <div class="box-header with-border">
+                                <ol class="breadcrumb col-xs-8">
+                                    <li><a href="/activity/store-activity/index"><i class="glyphicon glyphicon-gift"></i> 活动管理</a></li>
+                                    <li>活动设置</li>
+                                </ol>
+                                <ol class="breadcrumb col-xs-4 ">
+                                    <li class="pull-right"><a href="javascript:history.back(-1)"><i class="fa fa-list"></i> 返回</a></li>
+                                </ol>
+                            </div>
+                            <input type="hidden" name="id" id="id" value="0" />
+
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#id-basis-detail" data-toggle="tab" aria-expanded="true">活动设置</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-2 control-label"><em>* </em>活动名称：</label>
+                                        <div class="input-group col-sm-3">
+                                            <input type="text" name="name" id="name" value="" class="form-control input-sm">
+                                            <p class="text-top">活动名称<span class="red">2 ~ 10</span>个汉字，或不超过32个字符</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="number" class="col-sm-2 control-label">售卖总数：</label>
+                                        <div class="input-group col-sm-3">
+                                            <input type="text" name="number" id="number" onkeyup="clearNumber(this)" value="" class="form-control input-sm" >
+                                            <p class="text-top">活动总售卖份数</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="price" class="col-sm-2 control-label">售价：</label>
+                                        <div class="input-group col-sm-3" >
+                                            <input type="number" name="price" maxlength=10 onkeyup="clearNoNum(this)" id="price" value="" class="form-control col-sm-2 input-sm" >
+                                            <p class="text-top">所售商品单价<span class="red">售价 ＞ 商家分佣 ≥ 红包分佣</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="merchant_commission" class="col-sm-2 control-label">商家分佣：</label>
+                                        <div class="input-group col-sm-3" >
+                                            <input type="number" name="merchant_commission" maxlength=10 onkeyup="clearNoNum(this)" id="merchant_commission" value="" class="form-control col-sm-2 input-sm" >
+                                            <p class="text-top">商家实际获得分佣 = 商家分佣 - 红包分佣；<span class="red">商家分佣 ≥ 红包分佣</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="member_commission" class="col-sm-2 control-label">红包分佣：</label>
+                                        <div class="input-group col-sm-3" >
+                                            <input type="number" name="member_commission" maxlength=10 onkeyup="clearNoNum(this)" id="member_commission" value="" class="form-control col-sm-2 input-sm" >
+                                            <p class="text-top">转发活动页面的用户每笔订单提成收入。
+                                                提示：<span class="red">佣金金额不能大于商品购买价格，且红包金额必须在 1 ~ 200 之间</span></p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="dummy_views" class="col-sm-2 control-label">虚拟浏览量：</label>
+                                        <div class="input-group col-sm-3">
+                                            <input type="text" name="dummy_views" id="dummy_views" onkeyup="clearNumber(this)" value="" class="form-control  input-sm" >
+                                            <p class="text-top">浏览量 = 实际浏览量 + 虚拟浏览量</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="start_time" class="col-sm-2 control-label">开始时间：</label>
+                                        <div class="input-group col-sm-3">
+                                            <input type="text" name="start_time" readonly="readonly" id="start_time" value="" class="form-control input-sm">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="end_time" class="col-sm-2 control-label">结束时间：</label>
+                                        <div class="input-group col-sm-3">
+                                            <input type="text" name="end_time" readonly="readonly" id="end_time" value="" class="form-control input-sm">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#id-basis-detail" data-toggle="tab" aria-expanded="true">分享信息</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="title" class="col-sm-2 control-label">活动摘要：</label>
+                                        <div class="input-group col-sm-3">
+                                            <textarea class="form-control input-sm" rows="5" name="title"></textarea>
+                                            <p class="text-top">活动分享时，显示的摘要内容；例如：示例图一</p>
+                                        </div>
+                                        <div class="input-group col-sm-4 sample-image">
+                                            <p class=""><span class="red">示例图一：</span></p>
+                                            <img src="resources/activity/img/sample_1.png" width="100%">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="share_icon" class="col-sm-2 control-label">活动图标：</label>
+                                        <div class="input-group col-sm-4" style="overflow:hidden;">
+                                            <div id="share_before" style="display:inline-block;">
+                                            </div>
+                                            <label for="icon_upload" style="background-color:#ddd;width:50px;height:50px;line-height:50px;text-align:center;">
+                                                +										<input type="file" style="display:none;" accept="image/*" name="image_upload" id="icon_upload" placeholder="请上传活动图标">
+                                            </label>
+                                            <p>图片建议尺寸 : <span class="red">80 * 80</span>，文件大小不超过<span class="red">1M</span>，支持<span class="red">jpg、png</span>格式</p>
+                                            <p class="">活动分享时，显示的活动图标；例如：示例图一</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#id-basis-detail" data-toggle="tab" aria-expanded="true">客服信息</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="tel" class="col-sm-2 control-label">电话客服：</label>
+                                        <div class="input-group col-sm-3">
+                                            <input type="text" name="tel" id="tel" onkeyup="clearNumber(this)" value="" class="form-control  input-sm" >
+                                            <p class="text-top"> <span class="red">电话客服与微信客服不能同时为空！</span> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="guide_qrcode" class="col-sm-2 control-label">微信客服：</label>
+                                        <div class="input-group col-sm-4" style="overflow:hidden;">
+                                            <div id="qrcode_before" style="display:inline-block;">
+                                            </div>
+                                            <label for="qrcode_upload" style="background-color:#ddd;width:50px;height:50px;line-height:50px;text-align:center;">
+                                                +										<input type="file" style="display:none;" accept="image/*" name="image_upload" id="qrcode_upload" placeholder="请上传二维码图片">
+                                            </label>
+                                            <p>图片建议尺寸 : <span class="red">50 * 50</span>，文件大小不超过<span class="red">1M</span>，支持<span class="red">jpg、png</span>格式</p>
+                                            <p class="">页面展示所示；例如：示例图二</p>
+                                        </div>
+                                        <div class="input-group col-sm-3 sample-image">
+                                            <p class=""><span class="red">示例图二：</span></p>
+                                            <img src="resources/activity/img/sample_2.png" width="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="guide_title" class="col-sm-2 control-label">微信客服弹窗标题：</label>
+                                        <div class="input-group col-sm-3">
+                                            <input type="text" name="guide_title" id="guide_title" value="" class="form-control input-sm">
+                                            <p class="text-top">文字内容在 <span class="red">10</span> 个字以内，显示在活动分享后弹窗</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#id-basis-detail" data-toggle="tab" aria-expanded="true">页面编辑</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">背景音乐：</label>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="music_type" value="1" checked="checked"> 系统音乐 &nbsp;&nbsp;&nbsp;
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="music_type" value="2" > 自定义 &nbsp;&nbsp;&nbsp;
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+                                        <div id="music_type_1" class="input-group col-sm-3 ">
+                                            <select class="form-control" name="music">
+                                                <option value="0">---选择系统音乐---</option>
+                                                <option value="1" >新年好</option>
+                                                <option value="4" >钢琴曲</option>
+                                            </select>
+                                            <p class="text-top">选择系统默认音乐</p>
+                                        </div>
+                                        <div id="music_type_2" class="input-group col-sm-5 div-hide">
+                                            <input type="text" name="music_url" value="" class="form-control input-sm">
+                                            <p class="text-top">自定义音乐链接地址</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">活动封面：</label>
+                                        <div class="input-group col-sm-5" style="overflow:hidden;">
+                                            <div id="main_before" style="display:inline-block;">
+                                            </div>
+                                            <label for="main_upload" style="background-color:#ddd;width:50px;height:50px;line-height:50px;text-align:center;">
+                                                +										<input type="file" style="display:none;" accept="image/*" name="image_upload" id="main_upload" placeholder="请上传活动主图">
+                                            </label>
+                                            <p>图片建议尺寸 : <span class="red">750 * 1334</span>，文件大小不超过<span class="red">1M</span>，支持<span class="red">jpg、png</span>格式</p>
+                                            <p>效果图，如：示例图三</p>
+                                        </div>
+                                        <div class="input-group col-sm-4 sample-image">
+                                            <p class=""><span class="red">示例图三：</span></p>
+                                            <img src="resources/activity/img/sample_3.png" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">活动介绍：</label>
+                                        <div class="input-group col-sm-5">
+                                            <p><span class="red">活动图文内容编辑细则：</span></p>
+                                            <p><span class="red">1、禁止活动编辑图文中出现转发朋友圈、分享朋友圈、盆友圈、等字眼跟图片</span></p>
+                                            <p><span class="red">2、禁止活动编辑图文中出现积攒、集赞、集ZAN、等字眼跟图片</span></p>
+                                            <p><span class="red">3、禁止活动编辑图文中出现诱导关注的图片</span></p>
+                                            <p><span class="red">4、内容较多建议上传多图，图片建议尺寸 : 宽750，</span></span></p>
+                                            <p>效果图，如：示例图四</p>
+                                            <textarea class="form-control input-sm" id="editor1" rows="7" name="" cols="10"></textarea>
+                                        </div>
+                                        <div class="input-group col-sm-4 sample-image">
+                                            <p class=""><span class="red">示例图四：</span></p>
+                                            <img src="resources/activity/img/sample_4.png" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-5">
+                                        <!-- <button type="submit" id="preview-btn" class="btn btn-success">预览</button> -->
+                                        <button type="submit" id="preview-btn" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
+                                            预览
+                                        </button>
+
+                                        <button type="submit" id="submit-btn" class="btn btn-primary">保存</button>
+
+                                        <button type="button" class="btn btn-warning" onclick="window.history.go(-1)">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal fade" id="modal-default">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">扫码二维码，进行预览</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style type="text/css">
+            .example-modal .modal {
+                position: relative;
+                top: auto;
+                bottom: auto;
+                right: auto;
+                left: auto;
+                display: block;
+                z-index: 1;
+            }
+
+            .example-modal .modal {
+                background: transparent !important;
+            }
+            .modal-dialog {
+                width: 255px;
+                margin: 200px auto;
+            }
+
+            .div-hide {
+                display: none;
+            }
+            /*error span*/
+            span.val_error {
+                display: inline;
+                margin: 5px;
+                color: #f20;
+                font-weight: 400;
+            }
+            .form-group em{
+                color: #f20;
+            }
+            .col-md-5{
+                float: left;
+            }
+            .form-group .input-group .text-top {
+                padding-top: 38px;
+            }
+            .form-group .input-group p {
+                size: 12px;
+                color: #999;
+            }
+            .form-group .input-group p .red{
+                color: #f20;
+            }
+            .btn-warning {
+                margin-left: 50px;
+            }
+            .input-group {
+                float: left !important;
+            }
+            .sample-image{
+                /*position: relative;
+                display: table;
+                border-collapse: separate;
+                float: left;*/
+                margin-left: 10px;
+            }
+        </style>
+        <script type="text/javascript" src="plugins/jQuery-File-Upload-master/js/jquery.fileupload.js"></script>
+        <script type="text/javascript" src="js/static/jquery.form.js"></script>
+        <script type="text/javascript" src="js/static/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script><script>
+        $(function () {
+
+            //商家分佣
+            $("[name='merchant_commission']").blur(function(){
+                var merchant_commission = $(this).val();
+                var price = $("[name='price']").val();
+                if((merchant_commission - price) > 0){
+                    var html = '<span for="member_commission" class="val_error">商家分佣金额不能大于活动售价</span>';
+                    var val_error = $(this).next().hasClass('val_error');
+                    if(val_error){
+                        $(this).next().html(html);
+                    }else{
+                        $(this).addClass('val_error').after(html);
+                    }
+                    layer.msg('商家分佣金额不能大于活动售价');
+                    return false;
+                }
+            })
+
+            //红包分佣
+            $("[name='member_commission']").blur(function(){
+                var member_commission = $(this).val();
+                var val_error = $(this).next().hasClass('val_error');
+
+                if((member_commission > 0 && member_commission < 1) || member_commission > 200){
+                    var text = "红包金额必须在 1 ~ 200 之间";
+                    var html = '<span for="member_commission" class="val_error">红包金额必须在 1 ~ 200 之间</span>';
+                    if(val_error){
+                        $(this).next().html(html);
+                    }else{
+                        $(this).addClass('val_error').after(html);
+                    }
+
+                    layer.msg('红包金额必须在 1 ~ 200 之间');
+                    return false;
+                }
+                var price = $("[name='price']").val();
+                if((member_commission - price) > 0){
+                    var text = "红包金额不能大于活动售价";
+                    var html = '<span for="member_commission" class="val_error">红包金额不能大于活动售价</span>';
+                    if(val_error){
+                        $(this).next().html(html);
+                    }else{
+                        $(this).addClass('val_error').after(html);
+                    }
+                    layer.msg('红包金额不能大于活动售价');
+                    return false;
+                }
+                var merchant_commission = $("[name='merchant_commission']").val();
+                if(merchant_commission > 0 &&  (member_commission - merchant_commission) > 0){
+                    var text = "红包金额不能商家分佣金额";
+                    var html = '<span for="member_commission" class="val_error">红包金额不能商家分佣金额</span>';
+                    if(val_error){
+                        $(this).next().html(html);
+                    }else{
+                        $(this).addClass('val_error').after(html);
+                    }
+                    layer.msg('红包金额不能大于商家分佣金额');
+                    return false;
+                }
+            })
+
+            //音乐单选
+            $("[name='music_type']").click(function(){
+                var music_type = $(this).val();
+                if(music_type == 1){
+                    $("#music_type_2").addClass('div-hide');
+                    $("#music_type_1").removeClass('div-hide');
+                    $("#music_type_2").find('input').val('');
+                }else if(music_type == 2){
+                    $("#music_type_1").addClass('div-hide');
+                    $("#music_type_2").removeClass('div-hide');
+                    $("#music_type_1").find('select').val(0);
+                }
+            })
+
+            //手机号验证
+            $("[name='tel']").blur(function(){
+                var tel = $(this).val();
+                if(tel.length > 0){
+                    if(!isPhoneNo(tel)){
+                        layer.msg("请输入正确的手机号码");
+                    }
+                }
+            })
+
+
+            $('#start_time').daterangepicker({
+                singleDatePicker:true,		//设置为单个的datepicker，而不是有区间的datepicker
+                autoApply:true,
+                autoUpdateInput:false,
+                timePicker:true,
+                timePicker24Hour:true,
+                "locale": {
+                    format: 'YYYY-MM-DD HH:mm:ss',
+                    applyLabel : '确定',
+                    cancelLabel : '取消',
+                    customRangeLabel : '自定义',
+                    daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                    monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                    firstDay : 1
+                }
+            })
+            $('#end_time').daterangepicker({
+                singleDatePicker:true,		//设置为单个的datepicker，而不是有区间的datepicker
+                autoApply:true,
+                autoUpdateInput:false,
+                timePicker:true,
+                timePicker24Hour:true,
+                "locale": {
+                    format: 'YYYY-MM-DD HH:mm:ss',
+                    applyLabel : '确定',
+                    cancelLabel : '取消',
+                    customRangeLabel : '自定义',
+                    daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                    monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                    firstDay : 1
+                }
+            })
+
+            //编辑器
+            var editor = CKEDITOR.replace( 'editor1' );
+
+            //主图上传
+            $('#main_upload').fileupload({
+                url: 'uploadfile',
+                dataType: 'json',
+                add: function(e, data){
+                    data.submit();
+                },
+                done: function (e, data) {
+                    if(data['result']['code'] == 0) {
+                        var html = '<label class="delete" for="btn" >' +
+                            '<input id="btn" style="display:none;" type="hidden" name="main_image" value="' + data['result']['data']['src'] + '">' +
+                            '<img src="'+ data['result']['data']['src'] +'" style="width:250px;height:400px;" class="del_img">' +
+                            '</label>';
+                        $("#main_before").html(html);
+                    } else {
+                        alert('图片保存失败，请稍后重试');
+                    }
+                }
+            }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+            //活动图标上传
+            $('#icon_upload').fileupload({
+                url: 'uploadfile',
+                dataType: 'json',
+                add: function(e, data){
+                    data.submit();
+                },
+                done: function (e, data) {
+                    if(data['result']['code'] == 0) {
+                        var html = '<label class="delete" for="btn" >' +
+                            '<input type="hidden" name="share_icon" value="' + data['result']['data']['src'] + '">' +
+                            '<img src="'+ data['result']['data']['src'] +'" style="width:80px;height:80px;" class="del_img">' +
+                            '</label>';
+                        $("#share_before").html(html);
+                    } else {
+                        alert('图片保存失败，请稍后重试');
+                    }
+                }
+            }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+
+            //客服二维码上传
+            $('#qrcode_upload').fileupload({
+                url: 'uploadfile',
+                dataType: 'json',
+                add: function(e, data){
+                    data.submit();
+                },
+                done: function (e, data) {
+                    if(data['result']['code'] == 0) {
+                        var html = '<label class="delete" for="btn" >' +
+                            '<input type="hidden" name="guide_qrcode" value="' + data['result']['data']['src'] + '">' +
+                            '<img src="'+ data['result']['data']['src'] +'" style="width:250px;height:250px;" class="del_img">' +
+                            '</label>';
+                        $("#qrcode_before").html(html);
+                    } else {
+                        alert('图片保存失败，请稍后重试');
+                    }
+                }
+            }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+            //提交
+            $("#submit-btn").click(function(){
+                var qrcode_upload = $("#qrcode_upload").val();
+                var tel = $("#tel").val();
+                if(tel == '' && qrcode_upload == ''){
+                    layer.msg('客服二维码与电话不能同时为空！');
+                    return false;
+                }
+
+
+
+                $('#form_submit').data('open_type', false)
+            })
+
+            //预览
+            $("#preview-btn").click(function(){
+                $('#form_submit').data('open_type', true)
+            })
+
+            $("#form_submit").validate({
+                submitHandler:function(form, event){
+                    var name = $("[name='name']").val();
+                    if(name == ''){
+                        layer.msg('活动名称不能为空！');
+                        return false;
+                    }
+
+                    var content = editor.getData();
+                    $(form).find('#submit-btn, #preview-btn').attr('disabled', 'disabled')
+                    $.ajax({
+                        type: 'post',
+                        url: "save",
+                        dataTypes: 'json',
+                        data: $(form).serialize() + '&content='+content,
+                        success: function (res) {
+                            if(res.code == 0){
+                                var data = res.data;
+                                $("[name='id']").val(data.id);
+                                if($(form).data('open_type')){
+                                    $("#modal-default").find('img').attr('src','/'+data.qrcode);
+                                }else{
+                                    layer.msg(res.msg,{time:2000},function(){
+                                        location.href='index';
+                                    });
+                                }
+                            }else if(res.code == 1000){
+                                layer.msg('保存失败，数据不完整');
+                            }else {
+                                layer.msg( res.msg);
+                            }
+
+                            $(form).find('#submit-btn, #preview-btn').removeAttr('disabled')
+                        },
+                        error: function (jqXHR) {
+                            layer.msg( "获取数据发生错误！");
+                            $(form).find('#submit-btn, #preview-btn').removeAttr('disabled')
+                        }
+                    });
+                },
+                errorClass:'val_error',
+                errorElement:'span',
+                ignore: null,
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    /*price: {
+                        required: true
+                    },
+                    merchant_commission: {
+                        required: true
+                    },
+                    member_commission: {
+                        required: true,
+                    },
+                    number: {
+                        required: true,
+                    },
+                    tel: {
+                        required: true
+                    },
+                    start_time: {
+                        required: true
+                    },
+                    end_time: {
+                        required: true
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "活动名称不能为空！"
+                    },
+                    /*price: {
+                        required: "购买价格不能为空！"
+                    },
+                    merchant_commission: {
+                        required: "商家分佣不能为空！"
+                    },
+                    member_commission: {
+                        required: "用户分佣不能为空！"
+                    },
+                    number: {
+                        required: "商品数量不能为空！"
+                    },
+                    tel: {
+                        required: "联系电话不能为空！"
+                    },
+                    start_time: {
+                        required: "活动开始时间不能为空！"
+                    },
+                    end_time: {
+                        required: "活动结束时间不能为空！"
+                    },*/
+
+                }
+            });
+        });
+
+
+
+        // 验证手机号
+        function isPhoneNo(phone) {
+            var pattern = /^1[34578]\d{9}$/;
+            return pattern.test(phone);
+        }
+
+        //保留两位小数
+        function clearNoNum(obj) {
+            obj.value = obj.value.replace(/[^\d.]/g,""); //清除"数字"和"."以外的字符
+            obj.value = obj.value.replace(/^\./g,""); //验证第一个字符是数字而不是
+            obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的
+            obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+            obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); //只能输入两个小数
+        }
+
+        //整数
+        function clearNumber(obj) {
+            obj.value = obj.value.replace(/[^\d]/g,""); //清除"数字"以外的字符
+        }
+
+    </script>    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <!-- <b>Version</b> 1.1.0 -->
+        </div>
+        <!-- <strong>版权所有 &copy; 2018 -  <a href="#">深圳前海倍客网络科技有限公司</a></strong> -->
+    </footer>
+    <div class="control-sidebar-bg"></div>
+</div>
+<script type="text/javascript">
+
+    function locationHref(url)
+    {
+        window.location.href=url;
+    }
+
+    /*
+     *   弹框方法
+     *    @title 弹框的标题
+     *    @url   框内链接的内容
+     */
+    function showOpen(title,url,area){
+        area=area||['650px',"520px"];
+        layer.open({
+            type:2,
+            title:title,
+            shade:[0.5, '#393D49'],
+            area: area,
+            maxmin: false,
+            content: [url,'no'],
+            scrollbar: true
+        })
+    }
+</script>
+</body>
+</html>
